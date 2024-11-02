@@ -1,0 +1,22 @@
+.logo{
+    width: 5em;
+}
+body {
+    background-color: #f0f4f8; 
+    font-family: 'Arial', sans-serif;
+}
+.container {
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.form-group{
+  padding: 10px;
+}
+.required-star {
+  color: red; 
+  margin-left: 5px; 
+}
+.personal{
+    padding: 10px;
+    margin: 4px;
+}
