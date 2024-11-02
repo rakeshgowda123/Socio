@@ -30,7 +30,7 @@ const SignUp = ({onSuccess}) => {
       return handleError("error required all field");
     }
     try {
-      const url = "http://localhost:8080/user/signup";
+      const url = "https://socio-cvcx.onrender.com/user/signup";
       const response = await fetch(url, {
         method: "POST",
         headers: {
