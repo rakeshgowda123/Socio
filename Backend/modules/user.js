@@ -8,7 +8,7 @@ const UserSchema = new Schema({
     email:{type:String,required:true,unique:true},
     isRegistered: { type: Boolean, default: true } ,
     password:{type:String,required:true},
-    number: { type: String, required: true }
+   
 });
 
 const UserModel = mongoose.model('author',UserSchema);
