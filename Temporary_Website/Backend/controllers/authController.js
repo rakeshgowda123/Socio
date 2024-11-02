@@ -4,8 +4,6 @@ const UserModel = require("../modules/user");
 
 const imgurl = "../";
 
-const sendEmail = require("../SendingBlue");
-const sendWhatsApp = require("../whastapp");
 
 const signup = async (req, res) => {
   try {
