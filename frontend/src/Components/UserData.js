@@ -234,7 +234,7 @@ const UserData = () => {
               className="form-control"
               name="internships"
               value={userdata.internships}
-              placeholder="Enter internships (comma-separated)"
+              placeholder="What are all the interships You have done"
               onChange={handleUserInput}
               required
             />
