@@ -117,21 +117,7 @@ const SignUp = ({onSuccess}) => {
             />
           </div>
 
-          <div class="mb-3">
-            <label htmlFor="password" className="form-label">
-              Phone_number
-            </label>
-            <input
-              type="number"
-              onChange={hadlerchange}
-              name="number"
-              value={SignInfo.number}
-              autoFocus
-              className="form-control"
-              id="exampleInputPassword1"
-            />
-          </div>
-
+         
           <button type="submit" class="btn btn-primary">
             Submit
           </button>
