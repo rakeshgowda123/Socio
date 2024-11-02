@@ -66,7 +66,7 @@ const Login = ({onSuccess}) => {
   }
   return (
     <>
-      <h1 style={{ textAlign: "center" }}>Login to Socio....😊</h1>
+      <h1 style={{ textAlign: "center" }}>Login to Socio...</h1>
       <form onSubmit={handleLoginSubmit}>
         <div className="container" style={{ width: "75%" }}>
           <div class="mb-3">
