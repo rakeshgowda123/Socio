@@ -51,7 +51,7 @@ const UserData = () => {
     }
   
     try {
-      const url = "http://localhost:8080/user/userdata";
+      const url = "https://socio-cvcx.onrender.com/user/userdata";
       const response = await fetch(url, {
         method: "POST",
         headers: {
