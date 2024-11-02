@@ -195,7 +195,7 @@ const Landingpage = () => {
               )}
             </nav>
           </div>
-          {Logged && <div style={{ color: "white" }}>Welcome : {Logged}</div>}
+         
         </div>
       </header>
       {Logged && (
