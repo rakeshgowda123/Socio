@@ -29,6 +29,9 @@ const SignUp = ({onSuccess}) => {
     if (!name || !email || !password) {
       return handleError("error required all field");
     }
+    if(name ===email){
+       return handleError("name and email not same");
+    }
     try {
       const url = "https://socio-cvcx.onrender.com/user/signup";
       const response = await fetch(url, {
