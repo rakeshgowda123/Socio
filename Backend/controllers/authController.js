@@ -32,18 +32,19 @@ const signup = async (req, res) => {
     await sendEmail(
       email,
       name,
-      "Welcome to Socio Platform!",
+      "Thank You For Register for Our Socio-Orb...!",
       `
                 <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-                    <h1>Welcome to Our Socio Platform!</h1>
+                    <h1>Welcome to Our Socio-Orb Platform!</h1>
                     <img src="https://edsurge.imgix.net/uploads/post/image/6523/Community-1444864242.jpg?auto=compress%2Cformat&w=3000&h=1215&fit=crop" alt="Welcome Image" style="width: 100%; max-width: 600px; height: auto;">
                     <p>Dear ${name},</p>
+                     <p>Dear Our Team Member contact you soon,</p>
                     <p>We are thrilled to have you as part of our community. Your journey towards knowledge and growth starts here, and we’re excited to support you every step of the way.</p>
-                    <p>At Socio, we believe in the power of learning and collaboration. Explore our wide range of resources, connect with fellow learners, and take advantage of the tools we offer to enhance your educational experience.</p>
+                    <p>At Socio-Orb, we believe in the power of learning and collaboration. Explore our wide range of resources, connect with fellow learners, and take advantage of the tools we offer to enhance your educational experience.</p>
                     <p>If you have any questions or need assistance, feel free to reach out to our support team. We're here to help!</p>
                     <p>Thank you for joining us, and welcome aboard!</p>
                     <p>Warm regards,</p>
-                    <p>The Socio Team</p>
+                    <p>The Socio-Orb Team</p>
                 </div>
                 `
     );
