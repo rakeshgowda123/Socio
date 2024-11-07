@@ -104,7 +104,7 @@ const Landingpage = () => {
               {/* Logo */}
               <div className="w-16 h-16 animate-spin-slow">
                 <img
-                  src="/socioOrb.png"
+                  src="/SocioOrb (2).png"
                   alt="Socio-Orb Logo"
                   className="w-full h-full"
                 />
