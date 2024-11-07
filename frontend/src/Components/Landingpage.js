@@ -99,10 +99,10 @@ const Landingpage = () => {
       {/* Header */}
       <header className="fixed w-full bg-gray-900/90 backdrop-blur-sm border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className=" w-[110%] flex justify-between items-center h-20">
+          <div className=" w-[106%] flex justify-between items-center h-20">
             <div className="flex items-center gap-3">
               {/* Logo */}
-              <div className="h-[5.6em] w-[11.6em] animate-spin-slow">
+              <div className="h-[5.6em] w-[5.6em] animate-spin-slow">
                 <img
                   src="/SocioOrb (2).png"
                   alt="Socio-Orb Logo"
