@@ -48,7 +48,7 @@ const Landingpage = () => {
     if (Logged) {
       navigate("/UserData");
     } else {
-      handleError("Pls Login into Socio.");
+      handleError("Pls Login into Socio-Orb.");
     }
   };
 
@@ -66,30 +66,30 @@ const Landingpage = () => {
   const teamMembers = [
     {
       name: "Yashwanth G M",
-      role: "CEO of Socio",
+      role: "CEO of Socio-Orb",
       description:
-        "As the CEO of Socio,yashwanth drives the vision and strategic direction of the organization, empowering individuals through innovative educational resources and fostering a collaborative learning environment. With a passion for lifelong learning and operational excellence, he is committed to making quality education accessible to all.",
+        "As the CEO of Socio-Orb,yashwanth drives the vision and strategic direction of the organization, empowering individuals through innovative educational resources and fostering a collaborative learning environment. With a passion for lifelong learning and operational excellence, he is committed to making quality education accessible to all.",
       image: "/yash.jpg",
     },
     {
       name: "Rakesh Gowda",
-      role: "Founder of Socio",
+      role: "Founder of Socio-Orb",
       description:
-        "As the Founder of Socio, Rakesh Gowdra established the organization with a vision to transform education through innovative technology and collaborative learning. [His/Her/Their] passion for empowering individuals and commitment to accessibility have laid the foundation for a vibrant community dedicated to lifelong learning and personal growth.",
+        "As the Founder of Socio-Orb, Rakesh Gowdra established the organization with a vision to transform education through innovative technology and collaborative learning.passion for empowering individuals and commitment to accessibility have laid the foundation for a vibrant community dedicated to lifelong learning and personal growth.",
       image: "/rakesh.jpg",
     },
     {
       name: "Md Arif",
-      role: "CTO of Socio",
+      role: "CTO of Socio-Orb",
       description:
-        "As the CTO of Socio, Md Arif is responsible for overseeing the technological strategy and development of innovative educational solutions. With a strong focus on leveraging cutting-edge technology, [he/she/they] drives the implementation of scalable systems and ensures that Socio remains at the forefront of the digital learning landscape.",
+        "As the CTO of Socio-Orb, Md Arif is responsible for overseeing the technological strategy and development of innovative educational solutions. With a strong focus on leveraging cutting-edge technology,drives the implementation of scalable systems and ensures that Socio-Orb remains at the forefront of the digital learning landscape.",
       image: "/arif.jpg",
     },
     {
       name: "Sangamesh",
       role: "Developer",
       description:
-        "As a Developer at Socio, Sangamesha is responsible for creating and maintaining innovative educational applications that enhance user experience. [He/She/They] collaborates with teams to implement cutting-edge solutions, driving the mission of making learning accessible and engaging for all.",
+        "As a Developer at Socio-Orb, Sangamesha is responsible for creating and maintaining innovative educational applications that enhance user experience.collaborates with teams to implement cutting-edge solutions, driving the mission of making learning accessible and engaging for all.",
       image: "/sangu.jpg",
     },
   ];
@@ -104,14 +104,14 @@ const Landingpage = () => {
               {/* Logo */}
               <div className="w-16 h-16 animate-spin-slow">
                 <img
-                  src="/socio.png"
-                  alt="Socio Logo"
+                  src="/Socio.png"
+                  alt="Socio-Orb Logo"
                   className="w-full h-full"
                 />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-white">SOCIO</h1>
-                <p className="text-sm text-cyan-400">Social Connect</p>
+                <h1 className="text-2xl font-bold text-white">SOCIO-ORB</h1>
+                <p className="text-sm text-cyan-400">Social Orbit</p>
               </div>
             </div>
 
@@ -206,10 +206,10 @@ const Landingpage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-fade-in">
             <h1 className="text-5xl font-bold text-white mb-4">
-              Welcome to <span className="text-cyan-400">Socio</span>
+              Welcome to <span className="text-cyan-400">Socio-Orb</span>
             </h1>
             <p className="text-2xl text-cyan-400 font-medium mb-8">
-              "Connecting Knowledge, Inspiring Growth."
+              "Building Communities,Empowering Learners."
             </p>
             <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
               Join our vibrant community of learners and educators in a space
@@ -271,7 +271,7 @@ const Landingpage = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-gray-300 text-lg">
-                Socio is more than just a learning platform – it's a community
+                Socio-Orb is more than just a learning platform – it's a community
                 where knowledge meets collaboration. We believe in the power of
                 social learning and connection to drive educational success.
               </p>
@@ -284,7 +284,7 @@ const Landingpage = () => {
             </div>
             <div className="bg-gray-700 p-8 rounded-xl border border-gray-600 hover:border-cyan-400 transition-colors">
               <h3 className="text-2xl font-bold text-white mb-4">
-                Why Choose Socio?
+                Why Choose Socio-Orb?
               </h3>
               <ul className="space-y-4 text-gray-300">
                 <li className="flex items-center gap-3">
@@ -349,7 +349,7 @@ const Landingpage = () => {
                 <Mail className="h-6 w-6 text-cyan-400" />
                 <div>
                   <h3 className="text-white font-semibold">Email Us</h3>
-                  <p className="text-gray-300">sociosocialconnect@gmail.com</p>
+                  <p className="text-gray-300">Socio-Orbsocialconnect@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -429,7 +429,7 @@ const Landingpage = () => {
               <h4 className="font-semibold mb-4 text-white">Connect</h4>
               <div className="flex gap-4 text-gray-400">
                 <a
-                  href="https://x.com/Socio8892768421"
+                  href="https://x.com/Socio-Orb8892768421"
                   className="hover:text-cyan-400 transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -437,7 +437,7 @@ const Landingpage = () => {
                   <Twitter className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/socio-connect-0751ba336/"
+                  href="https://www.linkedin.com/in/Socio-Orb-connect-0751ba336/"
                   className="hover:text-cyan-400 transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -445,7 +445,7 @@ const Landingpage = () => {
                   <Linkedin className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://www.facebook.com/socio.484907/map"
+                  href="https://www.facebook.com/Socio-Orb.484907/map"
                   className="hover:text-cyan-400 transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -453,7 +453,7 @@ const Landingpage = () => {
                   <Facebook className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://www.instagram.com/socio.slc/profilecard/?igsh=bXJ6ZmFhZWg0MzN3"
+                  href="https://www.instagram.com/Socio-Orb.slc/profilecard/?igsh=bXJ6ZmFhZWg0MzN3"
                   className="hover:text-cyan-400 transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -489,7 +489,7 @@ const Landingpage = () => {
             </div>
           </div>
           <div className="mt-12 text-center text-gray-400">
-            <p>© 2024 Socio. All rights reserved.</p>
+            <p>© 2024 Socio-Orb. All rights reserved.</p>
           </div>
         </div>
       </footer>
@@ -509,7 +509,7 @@ const Landingpage = () => {
       {/* Greeting Modal for Successful Registration */}
       <Modal show={greeting} onHide={() => setGreeting(false)}>
         <Modal.Header closeButton>
-          <Modal.Title>Welcome to Socio!</Modal.Title>
+          <Modal.Title>Welcome to Socio-Orb!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className="text-center">
@@ -517,7 +517,7 @@ const Landingpage = () => {
               Thank You for Registering
             </h3>
             <p className="text-gray-700 mb-4">
-              We're excited to have you join the Socio community! Our team will
+              We're excited to have you join the Socio-Orb community! Our team will
               review your registration and get back to you soon.
             </p>
             <p className="text-sm text-gray-500">
