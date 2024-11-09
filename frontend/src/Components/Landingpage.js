@@ -94,6 +94,38 @@ const Landingpage = () => {
     },
   ];
 
+  const [query, setquery] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const QueryHadler = (e) => {
+    const { name, value } = e.target;
+    setquery((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const QuerySubmit = (e) => {
+    e.preventDefault();
+
+    const { name, email, message } = query;
+    const whatsappMessage = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
+    
+    // Create the WhatsApp link
+    const whatsappLink = `https://wa.me/9739498257?text=${encodeURIComponent(whatsappMessage)}`;
+
+    // const whatsappLink = `https://wa.me/7619587629?text=Name:%20${query.name}%0AQuery:%20${query.query}`;
+      console.log(message);
+      
+    // Open the WhatsApp link in a new tab
+    setTimeout(()=>{
+      window.open(whatsappLink, "_blank");
+    },2000)
+
+    setquery({ email: "", name: "", message: "" });
+    handleSuccess("successfully submited");
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800">
       {/* Header */}
@@ -356,7 +388,7 @@ const Landingpage = () => {
                 <Phone className="h-6 w-6 text-cyan-400" />
                 <div>
                   <h3 className="text-white font-semibold">Call Us</h3>
-                  <p className="text-gray-300">91+ 8495074227</p>
+                  <p className="text-gray-300">+91 8495074227</p>
                 </div>
               </div>
 
@@ -371,26 +403,41 @@ const Landingpage = () => {
               </div>
             </div>
 
-            <form className="space-y-6">
+            <form onSubmit={QuerySubmit} className="space-y-6">
               <input
                 type="text"
+                name="name"
+                value={query.name}
                 placeholder="Your Name"
+                onChange={QueryHadler}
                 className="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-cyan-400 focus:outline-none"
               />
               <input
                 type="email"
+                onChange={QueryHadler}
+                required
+                name="email"
+                value={query.email}
                 placeholder="Your Email"
                 className="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-cyan-400 focus:outline-none"
               />
               <textarea
                 placeholder="Your Message"
                 rows={4}
+                name="message"
+                value={query.message}
+                onChange={QueryHadler}
+                required
                 className="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-cyan-400 focus:outline-none"
               ></textarea>
-              <button className="w-full py-3 bg-cyan-400 text-gray-900 rounded-lg hover:bg-cyan-300 transition-colors font-bold">
+              <button
+                type="submit"
+                className="w-full py-3 bg-cyan-400 text-gray-900 rounded-lg hover:bg-cyan-300 transition-colors font-bold"
+              >
                 Send Message
               </button>
             </form>
+        
           </div>
         </div>
       </section>
