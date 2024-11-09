@@ -16,10 +16,8 @@ exports.userData = async (req, res) => {
       certifications,
       technicalSkills,
       softSkills,
-      languages,
       portfolio,
       linkedInProfile,
-      resume,
     } = req.body;
 
     const usedatamodel = new UserDataModel({
@@ -36,10 +34,8 @@ exports.userData = async (req, res) => {
       certifications,
       technicalSkills,
       softSkills,
-      languages,
       portfolio,
       linkedInProfile,
-      resume,
     });
 
     await usedatamodel.save();
