@@ -214,7 +214,7 @@ const UserData = () => {
 
         {/* Skills Section */}
         <div className="card p-4 mb-4">
-          <h4 className="card-title">Skills.</h4>
+          <h4 className="card-title">Skills</h4>
           <div className="form-group">
             <label>Technical Skills/(N/A) *</label>
             <input
@@ -266,7 +266,7 @@ const UserData = () => {
         </div>
 
         <div className="card p-4 mb-4">
-          <h4 className="card-title">Skills and Experience</h4>
+          <h4 className="card-title">Experience</h4>
 
           <div className="form-group">
             <label htmlFor="portfolio" className="form-label">
