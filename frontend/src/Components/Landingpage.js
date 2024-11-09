@@ -64,35 +64,36 @@ const Landingpage = () => {
 
   // Team Members Data
   const teamMembers = [
-    {
-      name: "Yashwanth G M",
-      role: "CEO adn Founder of Socio-Orb",
-      description:
-        "As the CEO of Socio-Orb,yashwanth drives the vision and strategic direction of the organization, empowering individuals through innovative educational resources and fostering a collaborative learning environment. With a passion for lifelong learning and operational excellence, he is committed to making quality education accessible to all.",
-      image: "/yashu.png",
-    },
-    {
-      name: "Rakesh Gowda",
-      role: "CFO of Socio-Orb",
-      description:
-        "As the Founder of Socio-Orb, Rakesh Gowdra established the organization with a vision to transform education through innovative technology and collaborative learning.passion for empowering individuals and commitment to accessibility have laid the foundation for a vibrant community dedicated to lifelong learning and personal growth.",
-      image: "/rakesh.jpg",
-    },
-    {
-      name: "Md Arif",
-      role: "COO of Socio-Orb",
-      description:
-        "As the CTO of Socio-Orb, Md Arif is responsible for overseeing the technological strategy and development of innovative educational solutions. With a strong focus on leveraging cutting-edge technology,drives the implementation of scalable systems and ensures that Socio-Orb remains at the forefront of the digital learning landscape.",
-      image: "/arifg.png",
-    },
-    {
-      name: "Sangamesh",
-      role: "CTO of Socio-Orb",
-      description:
-        "As a Developer at Socio-Orb, Sangamesha is responsible for creating and maintaining innovative educational applications that enhance user experience.collaborates with teams to implement cutting-edge solutions, driving the mission of making learning accessible and engaging for all.",
-      image: "/sangu.jpg",
-    },
-  ];
+  {
+    name: "Yashwanth G M",
+    role: "CEO and Founder of Socio-Orb",
+    description:
+      "As the CEO of Socio-Orb, Yashwanth drives the vision and strategic direction of the organization. He empowers individuals through innovative educational resources and fosters a collaborative learning environment. With a passion for lifelong learning and operational excellence, he is committed to making quality education accessible to all.",
+    image: "/yashu.png",
+  },
+  {
+    name: "Rakesh Gowda",
+    role: "CFO of Socio-Orb",
+    description:
+      "As the CFO of Socio-Orb, Rakesh Gowda plays a key role in shaping the financial strategy and ensuring the fiscal health of the organization. His vision to transform education through innovative technology and collaborative learning has laid the foundation for a vibrant community dedicated to lifelong learning and personal growth.",
+    image: "/rakesh.jpg",
+  },
+  {
+    name: "Md Arif",
+    role: "COO of Socio-Orb",
+    description:
+      "As the COO of Socio-Orb, Md Arif is responsible for overseeing the operational aspects of the organization. With a focus on efficient processes and scalability, he ensures the successful implementation of educational solutions and drives the operational growth of the company to meet its long-term objectives.",
+    image: "/arifg.png",
+  },
+  {
+    name: "Sangamesh",
+    role: "CTO of Socio-Orb",
+    description:
+      "As the CTO of Socio-Orb, Sangamesh leads the technology strategy and oversees the development of innovative educational applications. He works closely with the development team to implement cutting-edge solutions that enhance the user experience, driving the mission of making learning accessible and engaging for everyone.",
+    image: "/sangu.jpg",
+  },
+];
+
 
   const [query, setquery] = useState({
     name: "",
