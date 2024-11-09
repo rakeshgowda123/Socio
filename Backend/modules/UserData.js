@@ -17,10 +17,9 @@ const UserDataSchema = new Schema({
     certifications:{ type: String}, 
     technicalSkills: { type: String, required: true },  // Array of skills
     softSkills: { type: String},  // Array of skills
-    languages: { type: String},  // Array of languages
     portfolio: { type: String},
     linkedInProfile: { type: String, required: false },
-    resume: { type: String },
+  
 });
 const UserDataModel = mongoose.model('userdatas',UserDataSchema);
 
