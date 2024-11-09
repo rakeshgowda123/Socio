@@ -21,10 +21,10 @@ const UserData = () => {
     certifications: "",
     technicalSkills: "",
     softSkills: "",
-    languages: "",
+   
     portfolio: "",
     linkedInProfile: "",
-    resume: "",
+   
   });
 
   const handleUserInput = (e) => {
@@ -214,7 +214,7 @@ const UserData = () => {
 
         {/* Skills Section */}
         <div className="card p-4 mb-4">
-          <h4 className="card-title">Skills and Experience</h4>
+          <h4 className="card-title">Skills.</h4>
           <div className="form-group">
             <label>Technical Skills/(N/A) *</label>
             <input
@@ -267,21 +267,6 @@ const UserData = () => {
 
         <div className="card p-4 mb-4">
           <h4 className="card-title">Skills and Experience</h4>
-          <div className="form-group">
-            <label htmlFor="languages" className="form-label">
-              Languages /(N/A)
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="languages"
-              value={userdata.languages}
-              name="languages"
-              placeholder="Enter languages (comma-separated)"
-              onChange={handleUserInput}
-              required
-            />
-          </div>
 
           <div className="form-group">
             <label htmlFor="portfolio" className="form-label">
@@ -315,21 +300,6 @@ const UserData = () => {
             />
           </div>
 
-          <div className="form-group">
-            <label htmlFor="linkedInProfile" className="form-label">
-              Resume /(N/A) <span className="required-star">*</span>
-            </label>
-            <input
-              type="file"
-              className="form-control"
-              id="resume"
-              value={userdata.resume}
-              name="resume"
-              onChange={handleUserInput}
-              placeholder="Upload your resume"
-              required
-            />
-          </div>
         </div>
         <button type="submit" className="btn btn-primary btn-block">
           Submit
