@@ -16,11 +16,8 @@ const userdataValidation =(req,res,next)=>{
         certifications: Joi.string() ,
         technicalSkills: Joi.string().required(), // Array of strings for technical skills
         softSkills:  Joi.string(), // Array of strings for soft skills
-        languages:  Joi.string(), // Array of strings for languages
         portfolio: Joi.string(),
         linkedInProfile: Joi.string(),
-        resume: Joi.string()
-   
     });
     const {error} = schema.validate(req.body);
     if(error){
