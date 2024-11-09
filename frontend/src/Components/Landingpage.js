@@ -72,10 +72,10 @@ const Landingpage = () => {
     image: "/yashu.png",
   },
   {
-    name: "Rakesh Gowda",
+    name: "Rakesh Gowdra",
     role: "CFO of Socio-Orb",
     description:
-      "As the CFO of Socio-Orb, Rakesh Gowda plays a key role in shaping the financial strategy and ensuring the fiscal health of the organization. His vision to transform education through innovative technology and collaborative learning has laid the foundation for a vibrant community dedicated to lifelong learning and personal growth.",
+      "As the CFO of Socio-Orb, Rakesh Gowdra plays a key role in shaping the financial strategy and ensuring the fiscal health of the organization. His vision to transform education through innovative technology and collaborative learning has laid the foundation for a vibrant community dedicated to lifelong learning and personal growth.",
     image: "/rakesh.jpg",
   },
   {
@@ -116,7 +116,7 @@ const Landingpage = () => {
     const whatsappLink = `https://wa.me/9739498257?text=${encodeURIComponent(whatsappMessage)}`;
 
     // const whatsappLink = `https://wa.me/7619587629?text=Name:%20${query.name}%0AQuery:%20${query.query}`;
-      console.log(message);
+     // console.log(message);
       
     // Open the WhatsApp link in a new tab
     setTimeout(()=>{
