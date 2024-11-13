@@ -21,7 +21,7 @@ const UserData = () => {
     certifications: "",
     technicalSkills: "",
     softSkills: "",
-    couseType:"",
+    courseType:"",
     portfolio: "",
     linkedInProfile: "",
    
