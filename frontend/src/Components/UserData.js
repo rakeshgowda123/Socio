@@ -34,7 +34,9 @@ const UserData = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+    if(Loading){
+        return;
+      }
     if (
       !userdata.fullname ||
       !userdata.email ||
@@ -52,6 +54,7 @@ const UserData = () => {
     }
   
     try {
+      isLoading(true);
       const url = "https://socio-cvcx.onrender.com/user/userdata";
       const response = await fetch(url, {
         method: "POST",
@@ -69,9 +72,7 @@ const UserData = () => {
   
       const result = await response.json();
       const { success, message, error } = result;
-      if(Loading){
-        return;
-      }
+    
       
       if (success) {
         handleSuccess("Data saved successfully!");
