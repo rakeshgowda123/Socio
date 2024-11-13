@@ -30,7 +30,7 @@ const Login = ({onSuccess}) => {
     }
     
     try{
-        const url = "http://socio-cvcx.onrender.com/user/login";
+        const url = "https://socio-cvcx.onrender.com/user/login";
         const response = await fetch(url,{
             method:'POST',
             headers:{
