@@ -70,6 +70,7 @@ const Landingpage = () => {
     description:
       "As the CEO of Socio-Orb, Yashwanth drives the vision and strategic direction of the organization. He empowers individuals through innovative educational resources and fosters a collaborative learning environment. With a passion for lifelong learning and operational excellence, he is committed to making quality education accessible to all.",
     image: "/yashu.png",
+    email: "yashwanthsocialconnect@gmail.com"
   },
   {
     name: "Rakesh Gowdra",
@@ -77,6 +78,7 @@ const Landingpage = () => {
     description:
       "As the CFO of Socio-Orb, Rakesh Gowdra plays a key role in shaping the financial strategy and ensuring the fiscal health of the organization. His vision to transform education through innovative technology and collaborative learning has laid the foundation for a vibrant community dedicated to lifelong learning and personal growth.",
     image: "/rakesh.jpg",
+    email: "rakeshsocialconnect@gmail.com"
   },
   {
     name: "Md Arif",
@@ -84,6 +86,7 @@ const Landingpage = () => {
     description:
       "As the COO of Socio-Orb, Md Arif is responsible for overseeing the operational aspects of the organization. With a focus on efficient processes and scalability, he ensures the successful implementation of educational solutions and drives the operational growth of the company to meet its long-term objectives.",
     image: "/arifg.png",
+    email: "arifsocialconnect@gmail.com"
   },
   {
     name: "Sangamesh",
@@ -91,6 +94,7 @@ const Landingpage = () => {
     description:
       "As the CTO of Socio-Orb, Sangamesh leads the technology strategy and oversees the development of innovative educational applications. He works closely with the development team to implement cutting-edge solutions that enhance the user experience, driving the mission of making learning accessible and engaging for everyone.",
     image: "/sangu.jpg",
+    email: "sangameshsocialconnect@gmail.com"
   },
 ];
 
@@ -364,6 +368,7 @@ const Landingpage = () => {
                 </h3>
                 <p className="text-cyan-400 mb-3">{member.role}</p>
                 <p className="text-gray-300 text-sm">{member.description}</p>
+                <h4 className="text-cyan-400 mb-3">{member.email}</h4>
               </div>
             ))}
           </div>
