@@ -56,6 +56,7 @@ const UserData = () => {
     try {
       SetLoading(true);
       const url = "https://socio-cvcx.onrender.com/user/userdata";
+      // https://socio-cvcx.onrender.com/
       const response = await fetch(url, {
         method: "POST",
         headers: {
