@@ -160,21 +160,7 @@ const UserData = () => {
           </div>
         </div>
 
-          <div className="form-group">
-            <label>Which course Would you choose *</label>
-            <select
-              className="form-control"
-              name="courseType"
-              value={userdata.courseType}
-              onChange={handleUserInput}
-              required
-            >
-              <option value="">Select Courses</option>
-              <option value="Male">Python</option>
-              <option value="Female">Java</option>
-              <option value="Other">Projects</option>
-            </select>
-          </div>
+        
 
         {/* College Information Section */}
         <div className="card p-4 mb-4">
@@ -232,6 +218,23 @@ const UserData = () => {
         {/* Skills Section */}
         <div className="card p-4 mb-4">
           <h4 className="card-title">Skills</h4>
+  <div className="form-group">
+            <label>Which course Would you choose *</label>
+            <select
+              className="form-control"
+              name="courseType"
+              value={userdata.courseType}
+              onChange={handleUserInput}
+              required
+            >
+              <option value="">Select Courses</option>
+              <option value="Python">Python</option>
+              <option value="Java">Java</option>
+              <option value="Projects">Projects</option>
+            </select>
+          </div>
+
+          
           <div className="form-group">
             <label>Technical Skills/(N/A) *</label>
             <input
