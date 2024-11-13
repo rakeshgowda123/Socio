@@ -4,118 +4,143 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { handleError, handleSuccess } from "../util";
 
-const SignUp = ({ onSuccess }) => {
-  const [signInfo, setSignInfo] = useState({
+const SignUp = ({onSuccess}) => {
+  const [SignInfo, SetsignInfo] = useState({
     name: "",
     email: "",
     password: "",
+    number :"",
   });
   const navigate = useNavigate();
   
-  const handleChange = (e) => {
+  const hadlerchange = (e) => {
     const { name, value } = e.target;
-    setSignInfo(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    // console.log(name, value);
+    const alldata = { ...SignInfo };
+    alldata[name] = value;
+    SetsignInfo(alldata);
   };
+
+  // console.log("LOGIN INFO ->", SignInfo);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { name, email, password } = signInfo;
-    
-    if (!name || !email || !password) {
-      return handleError("All fields are required");
+    const { name, email, password,number} = SignInfo;
+    if (!name || !email || !password ||!number) {
+      return handleError("error required all field");
     }
-    
-    if (name === email) {
-      return handleError("Name and email cannot be the same");
-    }
-
     try {
-      const response = await fetch("https://socio-cvcx.onrender.com/user/signup", {
+      const url = "http://localhost:8080/user/signup";
+      const response = await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(signInfo),
+        body: JSON.stringify(SignInfo),
       });
-      
       const result = await response.json();
-      const { success, message, error } = result;
+     
       
-      if (success) {
+      const {success,message,error}= result;
+      if(success){
         handleSuccess("Register successfully");
         onSuccess();
-        setTimeout(() => {
+        setTimeout(()=>{
           navigate('/Home');
-        }, 1000);
-      } else if (error?.details?.[0]?.message) {
-        handleError(error.details[0].message);
-      } else {
-        handleError(message || 'Registration failed');
+        },1000);
+        
+      }else if(error && error.details && error.details.length>0){
+        const detailss= error.details[0].message;
+       
+        handleError(detailss);
+      } else{
+        handleError(message);
+       
       }
+      console.log(result);
     } catch (err) {
-      handleError(err.message || 'An error occurred');
+      handleError(err);
     }
   };
 
   return (
-    <div className="container mt-5">
-      <div className="row justify-content-center">
-        <div className="col-md-6">
-          <div className="card">
-            <div className="card-body">
-              <h2 className="text-center mb-4">Create an Account</h2>
-              <form onSubmit={handleSubmit}>
-                <div className="mb-3">
-                  <label htmlFor="name" className="form-label">Name</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="name"
-                    name="name"
-                    value={signInfo.name}
-                    onChange={handleChange}
-                    placeholder="Enter your name"
-                  />
-                </div>
-
-                <div className="mb-3">
-                  <label htmlFor="email" className="form-label">Email address</label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    id="email"
-                    name="email"
-                    value={signInfo.email}
-                    onChange={handleChange}
-                    placeholder="Enter your email"
-                  />
-                </div>
-
-                <div className="mb-3">
-                  <label htmlFor="password" className="form-label">Password</label>
-                  <input
-                    type="password"
-                    className="form-control"
-                    id="password"
-                    name="password"
-                    value={signInfo.password}
-                    onChange={handleChange}
-                    placeholder="Set your password"
-                  />
-                </div>
-
-                <button type="submit" className="btn btn-primary w-100">
-                  Sign Up
-                </button>
-              </form>
-            </div>
+    <>
+      <h1 style={{ textAlign: "center" }}>Create a Account...</h1>
+      <form onSubmit={handleSubmit}>
+        <div className="container" style={{ width: "75%" }}>
+          <div className="mb-3">
+            <label htmlFor="name" class="form-label">
+              Name
+            </label>
+            <input
+              onChange={hadlerchange}
+              type="text"
+              value={SignInfo.name}
+              name="name"
+              className="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              autoFocus
+            />
           </div>
+          <div class="mb-3">
+            <label
+              htmlFor="email"
+              for="exampleInputEmail1"
+              className="form-label"
+            >
+              Email address
+            </label>
+            <input
+              onChange={hadlerchange}
+              type="email"
+              name="email"
+              value={SignInfo.email}
+              className="form-control"
+              id="exampleInputEmail1"
+              autoFocus
+              aria-describedby="emailHelp"
+            />
+          </div>
+          <div class="mb-3">
+            <label htmlFor="password" className="form-label">
+             Set Password
+            </label>
+            <input
+              type="password"
+              onChange={hadlerchange}
+              name="password"
+              value={SignInfo.password}
+              autoFocus
+              className="form-control"
+              id="exampleInputPassword1"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label htmlFor="password" className="form-label">
+              Phone_number
+            </label>
+            <input
+              type="number"
+              onChange={hadlerchange}
+              name="number"
+              value={SignInfo.number}
+              autoFocus
+              className="form-control"
+              id="exampleInputPassword1"
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            Submit
+          </button>
+
+
+          <ToastContainer />
         </div>
-      </div>
-    </div>
+      </form>
+    </>
   );
 };
 
