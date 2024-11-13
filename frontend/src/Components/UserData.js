@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const UserData = () => {
   const navigate = useNavigate();
-
+  const [Loading,SetLoading] = useState(false);
   const [userdata, setuserdata] = useState({
     fullname: "",
     email: "",
@@ -69,7 +69,10 @@ const UserData = () => {
   
       const result = await response.json();
       const { success, message, error } = result;
-  
+      if(Loading){
+        return;
+      }
+      
       if (success) {
         handleSuccess("Data saved successfully!");
         setTimeout(() => {
@@ -83,9 +86,9 @@ const UserData = () => {
         handleError(message);}
     } catch (error) {
       handleError(error.message);
-    }
+    } finally{
+      SetLoading(false);
   };
-  
 
   return (
     <div className="container mt-5">
