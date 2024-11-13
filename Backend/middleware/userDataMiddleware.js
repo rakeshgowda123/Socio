@@ -10,6 +10,7 @@ const userdataValidation =(req,res,next)=>{
         collegeName: Joi.string().required(),
         currentEducation: Joi.string().required(),
         stream: Joi.string().required(),
+        courseType: Joi.string().valid('Python', 'Java', 'Projects').required(),
         graduationYear: Joi.number().integer().min(1900).required(), // Ensuring valid graduation year
         internships:  Joi.string(), 
         // internships: Joi.array().items(Joi.string()).default([]), // Array of strings for internships
