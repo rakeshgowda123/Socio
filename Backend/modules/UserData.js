@@ -13,7 +13,7 @@ const UserDataSchema = new Schema({
     stream: { type: String, required: true },
     graduationYear: {type:Number,required:true},
     internships: [String],  // List of internships as strings
-    // Structured certifications array
+    CourseType: { type: String, enum: ['Python', 'Java', 'Projects'], required: true },
     certifications:{ type: String}, 
     technicalSkills: { type: String, required: true },  // Array of skills
     softSkills: { type: String},  // Array of skills
