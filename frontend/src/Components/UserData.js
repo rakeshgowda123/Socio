@@ -21,7 +21,7 @@ const UserData = () => {
     certifications: "",
     technicalSkills: "",
     softSkills: "",
-   
+    couseType:"",
     portfolio: "",
     linkedInProfile: "",
    
@@ -40,6 +40,7 @@ const UserData = () => {
       !userdata.email ||
       !userdata.phoneNumber ||
       !userdata.gender ||
+      !userdata.courseType ||
       !userdata.age ||
       !userdata.collegeName ||
       !userdata.currentEducation ||
@@ -158,6 +159,22 @@ const UserData = () => {
             />
           </div>
         </div>
+
+          <div className="form-group">
+            <label>Which course Would you choose *</label>
+            <select
+              className="form-control"
+              name="courseType"
+              value={userdata.courseType}
+              onChange={handleUserInput}
+              required
+            >
+              <option value="">Select Courses</option>
+              <option value="Male">Python</option>
+              <option value="Female">Java</option>
+              <option value="Other">Projects</option>
+            </select>
+          </div>
 
         {/* College Information Section */}
         <div className="card p-4 mb-4">
