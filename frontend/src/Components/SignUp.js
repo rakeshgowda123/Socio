@@ -24,7 +24,7 @@ const SignUp = ({onSuccess}) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { name, email, password,number} = SignInfo;
+    const { name, email, password} = SignInfo;
     if (!name || !email || !password) {
       return handleError("error required all field");
     }
