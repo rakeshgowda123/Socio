@@ -324,8 +324,17 @@ const UserData = () => {
           </div>
 
         </div>
-        <button type="submit" className="btn btn-primary btn-block">
-          Submit
+        <button
+                disabled={Loading}
+                type="submit" className="btn btn-primary btn-block">
+         {Loading ? (
+            <>
+              <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+              Saving...
+            </>
+          ) : (
+            'Submit'
+          )}
         </button>
       </form>
     </div>
