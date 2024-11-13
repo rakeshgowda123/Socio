@@ -368,7 +368,7 @@ const Landingpage = () => {
                 </h3>
                 <p className="text-cyan-400 mb-3">{member.role}</p>
                 <p className="text-gray-300 text-sm">{member.description}</p>
-                <h4 className="text-cyan-400 mb-3">{member.email}</h4>
+                <p className="text-cyan-400 mb-3">{member.email}</p>
               </div>
             ))}
           </div>
