@@ -48,6 +48,7 @@ exports.userData = async (req, res) => {
     // return res.status(500).send({ message: "Error from controller here", error: error.message });
     res.status(500).json({
       message: "internal server error",
+      error:error.message,
       success: false,
     });
   }
