@@ -3,107 +3,103 @@ import { handleError, handleSuccess } from "../util";
 import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 
-const Login = ({onSuccess}) => {
-  const [LoginInfo, SetloginInfo] = useState({
+const Login = ({ onSuccess }) => {
+  const [loginInfo, setLoginInfo] = useState({
     email: '',
     password: '',
   });
   const navigate = useNavigate();
-  const handleLogin = (e) => {
-    const {name,value}= e.target;
-    console.log(e.target.value);
-    const loginData = {...LoginInfo}
-    loginData[name] = value;
-    SetloginInfo(loginData);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setLoginInfo(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
-//   console.log(LoginInfo);
   
-  const handleLoginSubmit = async (e)=>{
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("submit");
+    const { email, password } = loginInfo;
     
-    const {email,password} = LoginInfo;
-
-    if(!email || !password){
-        handleError("Pls fill the all  reuired data");
-        return;
+    if (!email || !password) {
+      return handleError("Please fill in all required fields");
     }
     
-    try{
-        const url = "https://socio-cvcx.onrender.com/user/login";
-        const response = await fetch(url,{
-            method:'POST',
-            headers:{
-                'Content-Type':'application/json',
-            },
-            body:JSON.stringify(LoginInfo),
-        });
-        const data = await response.json();
-        console.log(data);
-        const {success,name,jwtToken,message,error} = data;
-
-        if(success){
-            localStorage.setItem('name',name);
-            localStorage.setItem('jwtToken',jwtToken);
-            handleSuccess("Login success");
-            onSuccess();
-            setTimeout(()=>{
-                navigate('/home');
-            },1000)
-        }
-        else if(error && error.details && error.details.length>0){
-            const errorData = error.details[0].message;
-            handleError(errorData);
-        }
-        else{
-            handleError(message ||'an encounter');
-        }
-
-    }catch(err){
-        handleError(err);
+    try {
+      const response = await fetch("https://socio-cvcx.onrender.com/user/login", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(loginInfo),
+      });
+      
+      const data = await response.json();
+      const { success, name, jwtToken, message, error } = data;
+      
+      if (success) {
+        localStorage.setItem('name', name);
+        localStorage.setItem('jwtToken', jwtToken);
+        handleSuccess("Login successful");
+        onSuccess();
+        setTimeout(() => {
+          navigate('/home');
+        }, 1000);
+      } else if (error?.details?.[0]?.message) {
+        handleError(error.details[0].message);
+      } else {
+        handleError(message || 'Login failed');
+      }
+    } catch (err) {
+      handleError(err.message || 'An error occurred');
     }
+  };
 
-  }
   return (
-    <>
-      <h1 style={{ textAlign: "center" }}>Login to Socio...</h1>
-      <form onSubmit={handleLoginSubmit}>
-        <div className="container" style={{ width: "75%" }}>
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">
-              Email address
-            </label>
-            <input
-              value={LoginInfo.email}
-             onChange={handleLogin}
-              type="email"
-              name="email"
-              class="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-            />
+    <div className="container mt-5">
+      <div className="row justify-content-center">
+        <div className="col-md-6">
+          <div className="card">
+            <div className="card-body">
+              <h2 className="text-center mb-4">Login to Socio</h2>
+              <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                  <label htmlFor="email" className="form-label">Email address</label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="email"
+                    name="email"
+                    value={loginInfo.email}
+                    onChange={handleChange}
+                    placeholder="Enter your email"
+                  />
+                </div>
+
+                <div className="mb-3">
+                  <label htmlFor="password" className="form-label">Password</label>
+                  <input
+                    type="password"
+                    className="form-control"
+                    id="password"
+                    name="password"
+                    value={loginInfo.password}
+                    onChange={handleChange}
+                    placeholder="Enter your password"
+                  />
+                </div>
+
+                <button type="submit" className="btn btn-primary w-100">
+                  Login
+                </button>
+              </form>
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">
-              Password
-            </label>
-            <input
-              value={LoginInfo.password}
-              onChange={handleLogin}
-              type="password"
-              name="password"
-              class="form-control"
-              id="exampleInputPassword1"
-            />
-          </div>
-          <button type="submit" class="btn btn-primary">
-            Login
-          </button>
-          
-          <ToastContainer />
         </div>
-      </form>
-    </>
+      </div>
+    </div>
   );
 };
+
 export default Login;
