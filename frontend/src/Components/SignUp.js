@@ -9,7 +9,6 @@ const SignUp = ({onSuccess}) => {
     name: "",
     email: "",
     password: "",
-    number :"",
   });
   const navigate = useNavigate();
   
@@ -26,7 +25,7 @@ const SignUp = ({onSuccess}) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { name, email, password,number} = SignInfo;
-    if (!name || !email || !password ||!number) {
+    if (!name || !email || !password) {
       return handleError("error required all field");
     }
     try {
@@ -111,21 +110,6 @@ const SignUp = ({onSuccess}) => {
               onChange={hadlerchange}
               name="password"
               value={SignInfo.password}
-              autoFocus
-              className="form-control"
-              id="exampleInputPassword1"
-            />
-          </div>
-
-          <div class="mb-3">
-            <label htmlFor="password" className="form-label">
-              Phone_number
-            </label>
-            <input
-              type="number"
-              onChange={hadlerchange}
-              name="number"
-              value={SignInfo.number}
               autoFocus
               className="form-control"
               id="exampleInputPassword1"
